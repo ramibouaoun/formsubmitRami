@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckOut</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+    <header>
+        <nav>
+			<a href="http://10.147.17.251:8123/local/ellousa_web/slider_2.html"><img id="logo" src="s_photos/b1.png">Home</a>
+		    <a href="http://10.147.17.251:8123/local/ellousa_web/contact_us.html">Contacts</a>
+	        <button type="button" onclick="javascript:history.back()">Back to Cart</button>		
+        </nav>
+    </header>
+
+
+
+<body>
+
+
+
+
+
+
+
+    <div class="container">
+        <form action="">
+            <div class="listCard">
+
+
+			    <h3 class="title" style="text-align: center">ORDER SUMMARY</h3>
+				<div </div>
+                <h3 class="title" style="text-align: center">Image----Name-Price---Size------Quantity</h3>
+                <div class="listCard">
+                    <div id="listCard" class="listCard">
+                    </div>
+
+
+                <div class="listCard">
+				    <h3 class="title" style="text-align: center">SUBTOTAL in USD </h3>
+                    <div id="total" class="total" style="text-align: center;background-color: rgb(150, 161, 255)">
+                    </div>
+
+                <div class="listCard">
+				    <h3 class="title" style="text-align: center">INCLUDING VAT 10% </h3>
+                    <div id="vattotal" class="vattotal" style="text-align: center;background-color: rgb(150, 161, 255)">
+                    </div>
+
+<!--                 <div class="dropdown">
+                  <h2>Select Delivery option</h2>
+                  <button id="selected" class="selected">Delivery Options</button>
+                  <div id="content" class="content">
+                    <a value="G0001" type="checkbox" class="item-checkbox" data-price="0" name="To be collected From Store" isSelected="false" onclick="selectMe(this)" href="#">To be collected Free of cost</a>
+                    <a value="G0002" type="checkbox" class="item-checkbox" data-price="10" name="Delivery within Beirut" isSelected="false" onclick="selectMe(this)" href="#">Delivery within Beirut - charges 10 usd</a>
+                    <a value="G0003" type="checkbox" class="item-checkbox" data-price="20" name="Delivery Outside Beirut" isSelected="false" onclick="selectMe(this)" href="#">Delivery Outside Beirut - charges 20 usd</a>
+                  </div>
+                  <br>
+                  <div class="selopt">
+                   <p>Your selected option is:&nbsp;</p><p id="opt"></p>
+                   </div>
+                </div> -->
+
+                <div class="dropdown">
+                  <div id="selected" class="selected">Select Your Prefered Delivery Option</div>
+				  <div id="content" class="content">
+                  <select class="normalinput" name="giftname" id="giftname" onchange="populate('giftname')">
+                    <option data-price="0" class="item-checkbox" name="To be collected From Store" isSelected="false" onclick="selectMe(this)" value="G0001" href="#">To be collected Free of cost</option>
+                    <option data-price="10" class="item-checkbox" name="Delivery within Beirut" isSelected="false" onclick="selectMe(this)" value="G0002" href="#">Delivery within Beirut - charges 10 usd</option>
+					<option data-price="20" class="item-checkbox" name="Delivery Outside Beirut" isSelected="false" onclick="selectMe(this)" value="G0002" href="#">Delivery Outside Beirut - charges 20 usd</option>
+                  </select>
+                  </div>
+                  <br>
+                  <div class="selopt">
+                   <p>Your selected option is:&nbsp;</p><p id="opt"></p>
+                  </div>				  
+                </div>
+
+
+<!-- 
+                <div class="listCard">
+				    <h3 class="title" style="text-align: center">TESTING delivery One  </h3>
+                    <div id="deliveryone" class="deliveryone" style="text-align: center;background-color: rgb(150, 161, 255)">
+					</div>
+
+                <div class="listCard">
+				    <h3 class="title" style="text-align: center">TESTING delivery two  </h3>
+                    <div id="deliverytwo" class="deliverytwo" style="text-align: center;background-color: rgb(150, 161, 255)">
+					</div>
+
+ -->
+                <div class="listCard">
+				    <h3 class="title" style="text-align: center">TOTAL TO BE PAID in USD </h3>
+                    <div id="toutal" class="toutal" style="text-align: center;background-color: rgb(150, 161, 255)">
+					</div>
+			
+                <div class="column">
+                    <h3 class="title">Billing Address</h3>
+                    <div class="input-box">
+                        <span>Full Name :</span>
+                        <input type="text" placeholder="Jacob Aiden">
+                    </div>
+                    <div class="input-box">
+                        <span>Email :</span>
+                        <input type="email" placeholder="example@example.com">
+                    </div>
+                    <div class="input-box">
+                        <span>Address :</span>
+                        <input type="text" placeholder="Room - Street - Locality">
+                    </div>
+                    <div class="input-box">
+                        <span>City :</span>
+                        <input type="text" placeholder="Berlin">
+                    </div>
+
+                    <div class="flex">
+                        <div class="input-box">
+                            <span>State :</span>
+                            <input type="text" placeholder="Germany">
+                        </div>
+                        <div class="input-box">
+                            <span>Zip Code :</span>
+                            <input type="number" placeholder="123 456">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3 class="title">Payment</h3>
+                    <div class="input-box">
+                        <span>Cards Accepted :</span>
+                        <img src="imgcards.png" alt="">
+                    </div>
+                    <div class="input-box">
+                        <span>Name On Card :</span>
+                        <input type="text" placeholder="Mr. Jacob Aiden">
+                    </div>
+                    <div class="input-box">
+                        <span>Credit Card Number :</span>
+                        <input type="number" placeholder="1111 2222 3333 4444">
+                    </div>
+                    <div class="input-box">
+                        <span>Exp. Month :</span>
+                        <input type="text" placeholder="August">
+                    </div>
+                
+                    <div class="flex">
+                        <div class="input-box">
+                            <span>Exp. Year :</span>
+                            <input type="number" placeholder="2025">
+                        </div>
+                        <div class="input-box">
+                            <span>CVV :</span>
+                            <input type="number" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+.selected {
+  background-color: orange;
+  color: white;
+  padding: 5px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.selopt {
+  display: inline-block;
+}
+
+.content {
+  display: none;
+  position: absolute;
+  background-color: #999;
+  min-width: 200px;
+  z-index: 1;
+}
+
+.content a {
+  padding: 15px 20px;
+  text-decoration: none;
+  display: block;
+  color: black;
+  display: block;
+}
+
+.content a:hover {
+  background-color: #777;
+}
+
+.dropdown:hover .content {
+  display: block;
+  
+}
+
+.dropdown:hover .selected {
+  background-color: darkorange;
+  
+}
+
+
+
+
+
+
+
+
+
+
+#logo {
+  display: inline-block;
+  margin: 15px; /* margin: 20px was off */
+  float: center;
+  height: 80px;
+  width: auto; /* correct proportions to specified height */
+  border-radius: 50%; /* makes it a circle */
+  margin-left:auto;
+  margin-right:auto;
+}
+
+
+header{
+    width: 1140px;
+    max-width: 80%;
+    margin: auto;
+    height: 20px;
+    align-items: left;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+
+
+header a{
+    color: #FFFFFF;
+    margin-right: 40px;
+}
+
+
+
+
+.listCard li{
+    display: grid;
+    grid-template-columns: 110px repeat(6, 1fr);
+    color: #000000;
+    row-gap: 10px;
+}
+.listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	color: #000000;
+}
+.listCard li img{
+    width: 50%;
+}
+.listCard li button{
+    background-color: #fff;
+    border: none;
+	color: #fff;
+}
+.listCard .count{
+    margin: 0 10px;
+	color: #000000;
+	
+}
+
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1f242d;
+    padding: 25px;
+}
+
+.container form {
+    width: 800px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+form .row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.row .column {
+    flex: 1 1 250px;
+}
+
+.column .title {
+    font-size: 20px;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.column .input-box {
+    margin: 15px 0;
+}
+
+.input-box span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.column .flex {
+    display: flex;
+    gap: 15px;
+}
+
+.flex .input-box {
+    margin-top: 5px;
+}
+
+.input-box img {
+    height: 34px;
+    margin-top: 5px;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+form .btn {
+    width: 100%;
+    padding: 12px;
+    background: #8175d3;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    font-size: 17px;
+    color: #fff;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+form .btn:hover {
+    background: #6a5acd;
+}
+
+
+</style>
+
+
+<script>
+
+
+const savedInnerContent = localStorage.getItem('savedDivInnerContent');
+
+if (savedInnerContent) {
+const targetDiv = document.getElementById('listCard'); // Get the div to update
+if (targetDiv) {
+   targetDiv.innerHTML = savedInnerContent;
+}
+}
+</script>
+
+
+<script>
+const savedClass = localStorage.getItem('savedDivClass');
+
+if (savedClass) {
+const targetClass = document.getElementById('total'); // Get the div to update
+if (targetClass) {
+   targetClass.innerText = savedClass;
+   console.log("Subtotal", savedClass);
+   console.log("Vattotal", vattotal);
+   console.log("DeliveryOne", deliveryone);
+   console.log("DeliveryTwo", deliverytwo);
+   console.log("Toutal", toutal);   
+   
+}
+}
+
+</script>
+
+<script>
+function selectMe(opt) {
+   if (opt.name == retrieveOption()) return;   
+   document.getElementById("selected").innerText = opt.innerText;
+   var children = document.getElementById("content").children;
+   
+   for (var i of children) {
+      var newText = i.innerText.replace(" ✓", "");
+      i.innerText = newText;
+      i.setAttribute("isSelected", "false"); 
+   }
+
+   opt.innerText += " ✓";
+   opt.setAttribute("isSelected", "true"); 
+
+   newOpt = retrieveOption();
+   document.getElementById("opt").innerText = newOpt;
+
+}
+
+
+function retrieveOption() {
+   var children = document.getElementById("content").children;
+   for (var i of children) {
+       if (i.getAttribute("isSelected") == "true") {
+           return i.name;
+		          
+       }
+   }
+}
+</script>
+
+
+<script>
+//document.addEventListener('DOMContentLoaded', function() {
+//    const itemCheckboxes = document.querySelectorAll('.item-checkbox');
+//    const subtotalDisplay = savedClass;
+//    const totalDisplay = document.getElementById('newtotal');
+
+//    function calculateTotals() {
+//        let currentSubtotal = 0;
+//        itemCheckboxes.forEach(checkbox => {
+//            if (checkbox.checked) {
+//                const itemPrice = parseFloat(checkbox.dataset.price);
+//                currentSubtotal += itemPrice;
+//            }
+//        });
+//        subtotalDisplay.textContent = currentSubtotal; // Format to 2 decimal places
+//        totalDisplay.textContent = (currentSubtotal + savedClass ); // Example: Add 5% tax
+//    }
+
+//    itemCheckboxes.forEach(checkbox => {
+//        checkbox.addEventListener('change', calculateTotals);
+//    });
+
+    // Initial calculation on page load
+//    calculateTotals();
+//});
+
+</script>
+
+
+
+<script>
+
+var vattotal = 1.1 * savedClass ;
+document.getElementById("vattotal").textContent = vattotal.toFixed(2);
+//document.getElementById("vattotal").innerHTML = vattotal;  
+</script>  
+
+
+<script>
+
+var deliveryone = 10 + vattotal ;
+document.getElementById("deliveryone").textContent = deliveryone;
+
+
+var deliverytwo = 20 + vattotal ;
+document.getElementById("deliverytwo").textContent = deliverytwo;
+
+
+</script>
+
+
+<script type="text/javascript">
+  populate('giftname');
+
+  function populate(giftnameId) {
+    var giftnameSelect = document.getElementById(giftnameId); // Select dropdown
+    let selectedOption = giftnameSelect.options[giftnameSelect.selectedIndex]; // Selected option
+    // Get the selected value. We need the plus to parse it to a number, because initially its a string.
+    var selectedGiftnameValue = +selectedOption.dataset.price;
+    var toutal = vattotal + selectedGiftnameValue;
+    document.getElementById("toutal").innerHTML = toutal.toFixed(2);
+  }
+</script>

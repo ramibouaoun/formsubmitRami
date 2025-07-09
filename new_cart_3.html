@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" integrity="sha512-r22gChDnGvBylk90+2e/ycr3RVrDi8DIOkIGNhJlKfuyQM4tIRAI062MaV8sfjQKYVGjOBaZBOA87z+IhZE9DA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>	
+    <title>Butterflier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="">
+
+
+    <header>
+        <nav>
+			<a href="http://10.147.17.251:8123/local/ellousa_web/slider_2.html"><img id="logo" src="s_photos/b1.png">Home</a>
+		    <a href="http://10.147.17.251:8123/local/ellousa_web/contact_us.html">Contacts</a>
+	
+			
+        </nav>
+    </header>
+	
+
+<!--             <a href="http://10.147.17.251:8123/local/ellousa_web/s1-1.jpg.html"><img id="image" src="s_photos/s1.jpg" alt="Image 3" style="width: 100%;"></a>
+
+     -->
+    <div class="container">
+        <header>
+            <h1></h1>
+            <div class="shopping">
+                <img src="image/shopping.svg">
+                <span class="quantity">0</span>
+            </div>
+        </header>
+
+
+        <div class="products" id="products">
+          <div class="product">
+			<a href="http://10.147.17.251:8123/local/ellousa_web/s1-1.jpg.html"><img class="image" src="s_photos/s1.jpg" alt="Image 3" style="width: 75%;"></a>
+            <p>Vienna - $10</p>
+            <select id="size" class="size-select">
+              <option value="XS">XS</option>			
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+            <h3>Available in Stock</h3>			
+			<div id="XS" class="ViennaXS"></div>			
+			<div id="S" class="ViennaS"></div>	
+			<div id="M" class="ViennaM"></div>
+			<div id="L" class="ViennaL"></div>
+			<div id="XL" class="ViennaXL"></div>			
+            <input type="number" class="quantity-input" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product">
+		    <img class="image" src="s_photos/s2.jpg" alt="Image 3" style="width: 75%;"> 
+            <p>Tokyo - $20</p>
+            <select id="size" class="size-select">
+			  <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+            <h3>Available in Stock</h3>			
+			<div id="XS" class="TokyoXS"></div>			
+			<div id="S" class="TokyoS"></div>	
+			<div id="M" class="TokyoM"></div>
+			<div id="L" class="TokyoL"></div>
+			<div id="XL" class="TokyoXL"></div>			
+            <input type="number" class="quantity-input" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product">
+		    <img class="image" src="s_photos/s3.jpg" alt="Image 3" style="width: 75%;"> 
+            <p>Qatar - $100</p>
+            <select id="size" class="size-select">
+			  <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+            <h3>Available in Stock</h3>			
+			<div id="XS" class="QatarXS"></div>			
+			<div id="S" class="QatarS"></div>	
+			<div id="M" class="QatarM"></div>
+			<div id="L" class="QatarL"></div>
+			<div id="XL" class="QatarXL"></div>				
+            <input type="number" class="quantity-input" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+
+
+          <div class="product">
+		    <img class="image" src="s_photos/s4.jpg" alt="Image 3" style="width: 75%;"> 
+            <p>France - $10</p>
+            <select id="size" class="size-select">
+			  <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>	
+            <h3>Available in Stock</h3>			
+			<div id="XS" class="FranceXS"></div>			
+			<div id="S" class="FranceS"></div>	
+			<div id="M" class="FranceM"></div>
+			<div id="L" class="FranceL"></div>
+			<div id="XL" class="FranceXL"></div>				
+            <input type="number" class="quantity-input" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product">
+		    <img class="image" src="s_photos/s5.jpg" alt="Image 3" style="width: 75%;"> 
+            <p>Germany - $20</p>
+            <select id="size" class="size-select">
+			  <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+            <h3>Available in Stock</h3>			
+			<div id="XS" class="GermanyXS"></div>			
+			<div id="S" class="GermanyS"></div>	
+			<div id="M" class="GermanyM"></div>
+			<div id="L" class="GermanyL"></div>
+			<div id="XL" class="GermanyXL"></div>			
+            <input type="number" class="quantity-input" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+          <div class="product">
+		    <img class="image" src="s_photos/s6.jpg" alt="Image 3" style="width: 75%;"> 
+            <p>Kuwait - $100</p>
+            <select id="size" class="size-select">
+			  <option value="XS">XS</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+            <h3>Available in Stock</h3>			
+			<div id="XS" class="KuwaitXS"></div>			
+			<div id="S" class="KuwaitS"></div>	
+			<div id="M" class="KuwaitM"></div>
+			<div id="L" class="KuwaitL"></div>
+			<div id="XL" class="KuwaitXL"></div>			
+            <input type="number" class="quantity-input" value="1" min="1">
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+
+		  
+        </div>
+
+
+
+
+          
+
+    </div>
+    <div id="cart" class="card">
+        <h1>Thank you For Shopping With Us</h1>
+        <ul id="cart-items" class="listCard">
+		 <div class="count"></div>
+        </ul>
+        <div class="checkOut">
+            <div id="carttotal" class="total">0</div>
+            <div class="closeShopping">Close</div>
+        </div>
+    </div>
+
+
+
+<!--     <div class="slideshow-container"> 
+        <img id="slideshow" src="s_photos/s7.jpg" alt="Slideshow Image" style="width: 100%;"> 
+    </div>  -->
+    <body class="bgimg" style="width: 100%;"></body>
+    
+	
+
+</body>
+</html>
+
+<style>
+
+body{
+#    background-color: #E3E7E8;
+#    font-family: system-ui;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('s_photos/ocean4.jpg');
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+
+#logo {
+  display: inline-block;
+  margin: 15px; /* margin: 20px was off */
+  float: center;
+  height: 80px;
+  width: auto; /* correct proportions to specified height */
+  border-radius: 50%; /* makes it a circle */
+  margin-left:auto;
+  margin-right:auto;
+}
+
+header{
+    width: 1140px;
+    max-width: 80%;
+    margin: auto;
+    height: 20px;
+    align-items: left;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+
+
+.products { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjust column size */ 
+    gap: 150px; /* Space between images */ 
+	transition: transform 0.3s ease-in-out; /* Smooth sliding */
+	justify-content: center;
+#    justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	vertical-align: middle;
+	margin: 0 auto;
+#	height: 100px;
+#	width: 100px;
+#	top: 50%;
+#	transform: translateY(-50%);
+} 
+.products img { 
+    height: 200px; /* Set the desired height */ 
+    width: 100%; /* Make the image fill the container */ 
+    object-fit: cover; /* Ensures the image covers the area */ 
+	flex-shrink: 0; /* Prevent images from shrinking */
+
+} 
+
+
+
+
+header a{
+    color: #FFFFFF;
+    margin-right: 40px;
+}
+
+
+.bgimg{
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('s_photos/ocean.jpg');
+    background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.slideshow-container { 
+#    position: relative; 
+#    width: 100%; /* Adjust width as needed */ 
+#    max-width: 600px; /* Max width for the slideshow */ 
+#    margin: auto; 
+#    overflow: hidden; 
+    background-size: cover;
+    background-position: 50% 50%;	
+    background-repeat: no-repeat;
+	background-attachment: fixed;	
+} 
+ 
+#slideshow { 
+    width: 100%; 
+    height: auto; /* Maintain aspect ratio */ 
+    transition: opacity 1s ease; /* Smooth transition */ 
+}
+
+
+.container{
+    width: 900px;
+    margin: auto;
+    transition: 0.5s;
+}
+header{
+#    width: 1140px;
+    max-width: 80%;
+#    margin: auto;
+#    height: 10px;
+#    align-items: center;
+    position: fixed;
+#    z-index: 100;
+#    display: flex;
+#    justify-content: space-between;
+#    align-items: center;
+    padding: -10px 0;
+#	padding-top: -500px;
+#    padding-bottom: -10px;
+		
+}
+header .shopping{
+    position: relative;
+    text-align: right;
+	color: #FFFFFF;
+}
+header .shopping img{
+    width: 40px;
+	background-color: #FFFFFF;
+}
+header .shopping span{
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    position: absolute;
+    top: -5px;
+    left: 80%;
+    padding: 3px 10px;
+}
+
+.card{
+    position: fixed;
+    top:0;
+    left: 100%;
+    width: 400px;
+    background-color: #453E3B;
+    height: 100vh;
+    transition: 0.5s;
+}
+.active .card{
+    left: calc(100% - 400px);
+}
+.active .container{
+   transform: translateX(-200px);
+}
+.card h1{
+    color: #E8BC0E;
+    font-weight: 80;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.card .checkOut{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.card .checkOut div{
+    background-color: #E8BC0E;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card .checkOut div:nth-child(2){
+    background-color: #1C1F25;
+    color: #fff;
+}
+.listCard li{
+    display: grid;
+    grid-template-columns: 300px repeat(4, 1fr);
+    color: #fff;
+    row-gap: 40px;
+    justify-content: center;
+    align-items: center;
+	
+}
+.listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listCard li img{
+    width: 250%;
+	justify-content: left;
+	align-items: left;
+}
+.listCard li button{
+    background-color: #fff5;
+    border: none;
+}
+.listCard .count{
+    margin: 0 10px;
+}
+
+</style>
+
+<script>
+  let cart = {};
+  let cartTotal = 0;
+
+  const productsContainer = document.getElementById('products');
+  const cartItemsContainer = document.getElementById('cart-items');
+  const cartTotalElement = document.getElementById('carttotal');
+
+  productsContainer.addEventListener('click', function(event) {
+    if (event.target.classList.contains('add-to-cart')) {
+      const productElement = event.target.parentElement;
+      const productName = productElement.querySelector('p').innerText.split(' - ')[0];
+      const productPriceText = productElement.querySelector('p').innerText.split(' - ')[1];
+      const productPrice = parseFloat(productPriceText.replace('$', ''));
+      const productSize = productElement.querySelector('.size-select').value;
+      const productQuantity = parseInt(productElement.querySelector('.quantity-input').value);
+//      const productImage = document.querySelector('.product img').src;
+      const productImage = productElement.querySelector('img').src;
+      addToCart(productImage, productName, productPrice, productSize, productQuantity);
+      updateCart();
+    }
+  });
+
+  function addToCart(imageSrc, name, price, size, quantity) {
+    const cartItemKey = `${imageSrc}-${name}-${size}`;
+
+    if (cart[cartItemKey]) {
+      cart[cartItemKey].quantity += quantity;
+    } else {
+      cart[cartItemKey] = {
+        image: imageSrc,
+        name: name,
+        price: price,
+        size: size,
+        quantity: quantity,
+      };
+    }
+    cartTotal += price * quantity;
+    let count = 0;
+    quantity.innerText += count;
+	count += count + quantity;
+	console.log("count" , count);	
+  }
+
+
+  function updateCart() {
+    cartItemsContainer.innerHTML = '';
+    for (const itemKey in cart) { 
+      const item = cart[itemKey];
+	  const itemImage = document.createElement('img');
+      itemImage.src = item.image;
+      const listItem = document.createElement('li');
+      listItem.innerText = `${item.name} ${item.size} - Quantity: ${item.quantity} - $${item.price * item.quantity}`;
+	  listItem.appendChild(itemImage);
+      cartItemsContainer.appendChild(listItem);
+    }
+    cartTotalElement.innerText = cartTotal;	
+  }
+
+
+  
+  
+</script>
+
+
+<script>
+//function updateSize(size) {
+    //  Code to handle size selection (e.g., updating stock, etc.)
+//    console.log("Selected size:", size);
+//}
+
+
+let openShopping = document.querySelector('.shopping');
+let closeShopping = document.querySelector('.closeShopping');
+let list = document.querySelector('.list');
+let listCard = document.querySelector('.listCard');
+let body = document.querySelector('body');
+let total = document.querySelector('.total');
+let quantity = document.querySelector('.quantity');
+
+openShopping.addEventListener('click', ()=>{
+    body.classList.add('active');
+})
+closeShopping.addEventListener('click', ()=>{
+    body.classList.remove('active');
+})
+
+
+
+</script>
+
+
+
+<!-- <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const size = document.getElementById('size');
+    const XS = document.getElementById('XS');
+	const S = document.getElementById('S');
+	const M = document.getElementById('M');
+	const L = document.getElementById('L');
+	const XL = document.getElementById('XL');
+//    const [XS, S, M, L, XL] = document.querySelectorAll("#XS,#S,#M,#L,#XL")	;
+
+    size.addEventListener('change', function() {
+        if (this.value === 'XS') {
+		    XS.style.display = 'block';
+            S.style.display = 'none'; 
+			M.style.display = 'none'; 
+			L.style.display = 'none'; 
+			XL.style.display = 'none';
+			
+        } else if (this.value === 'S') {
+		    XS.style.display = 'none';
+            S.style.display = 'block'; 
+			M.style.display = 'none'; 
+			L.style.display = 'none'; 
+			XL.style.display = 'none'; 	
+
+        } else if (this.value === 'M') {
+		    XS.style.display = 'none';
+            S.style.display = 'none'; 
+			M.style.display = 'block'; 
+			L.style.display = 'none'; 
+			XL.style.display = 'none'; 	
+
+        } else if (this.value === 'L') {
+		    XS.style.display = 'none';
+            S.style.display = 'none'; 
+			M.style.display = 'none'; 
+			L.style.display = 'block'; 
+			XL.style.display = 'none'; 	
+
+        } else if (this.value === 'XL') {
+		    XS.style.display = 'none';
+            S.style.display = 'none'; 
+			M.style.display = 'none'; 
+			L.style.display = 'none'; 
+			XL.style.display = 'block'; 
+        }
+    });	
+});
+
+</script> -->
+
+
+
+
+
+
+
+<script>
+document.getElementById('carttotal').addEventListener('click', carttotal);
+
+
+
+function carttotal() {
+  const confirmation = confirm("Are you sure you want to proceed?");
+
+  if (confirmation) {
+    // User clicked OK, proceed with the deletion
+    console.log("Item deleted successfully.");
+	window.location.assign('http://10.147.17.251:8123/local/ellousa_web/checkout.html');
+    // Add your deletion logic here
+  } else {
+    // User clicked Cancel, do not proceed
+    console.log("Deletion cancelled.");
+  }
+}
+
+</script>
+
+
+
+<script>
+
+document.getElementById('carttotal').addEventListener('click', function() {
+  localStorage.setItem('savedDivInnerContent', listCard.innerHTML);
+});
+
+
+document.getElementById('carttotal').addEventListener('click', function() {
+  localStorage.setItem('savedDivClass', total.innerText);
+});
+
+</script>
+
+
+
+
+<script>
+
+
+let ViennaXS = document.querySelector(".ViennaXS");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			ViennaXS.innerHTML = JSON.stringify(html[1], null, 2);
+					
+	}
+)()
+
+
+let ViennaS = document.querySelector(".ViennaS");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			ViennaS.innerHTML = JSON.stringify(html[2], null, 2);
+					
+	}
+)()
+
+
+let ViennaM = document.querySelector(".ViennaM");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			ViennaM.innerHTML = JSON.stringify(html[3], null, 2);
+					
+	}
+)()	
+
+let ViennaL = document.querySelector(".ViennaL");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			ViennaL.innerHTML = JSON.stringify(html[4], null, 2);
+					
+	}
+)()	
+
+let ViennaXL = document.querySelector(".ViennaXL");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			ViennaXL.innerHTML = JSON.stringify(html[5], null, 2);
+					
+	}
+)()	
+
+</script>
+
+
+
+<script>
+let TokyoXS = document.querySelector(".TokyoXS");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			TokyoXS.innerHTML = JSON.stringify(html[6], null, 2);
+					
+	}
+)()
+
+
+let TokyoS = document.querySelector(".TokyoS");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			TokyoS.innerHTML = JSON.stringify(html[7], null, 2);
+					
+	}
+)()
+
+
+let TokyoM = document.querySelector(".TokyoM");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			TokyoM.innerHTML = JSON.stringify(html[8], null, 2);
+					
+	}
+)()	
+
+let TokyoL = document.querySelector(".TokyoL");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			TokyoL.innerHTML = JSON.stringify(html[9], null, 2);
+					
+	}
+)()	
+
+let TokyoXL = document.querySelector(".TokyoXL");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			TokyoXL.innerHTML = JSON.stringify(html[10], null, 2);
+					
+	}
+)()	
+
+</script>
+
+
+
+<script>
+let QatarXS = document.querySelector(".QatarXS");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			QatarXS.innerHTML = JSON.stringify(html[11], null, 2);
+					
+	}
+)()
+
+
+let QatarS = document.querySelector(".QatarS");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			QatarS.innerHTML = JSON.stringify(html[12], null, 2);
+					
+	}
+)()
+
+
+let QatarM = document.querySelector(".QatarM");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			QatarM.innerHTML = JSON.stringify(html[13], null, 2);
+					
+	}
+)()	
+
+let QatarL = document.querySelector(".QatarL");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			QatarL.innerHTML = JSON.stringify(html[14], null, 2);
+					
+	}
+)()	
+
+let QatarXL = document.querySelector(".QatarXL");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			QatarXL.innerHTML = JSON.stringify(html[15], null, 2);
+					
+	}
+)()	
+
+</script>
+
+
+<script>
+let FranceXS = document.querySelector(".FranceXS");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			FranceXS.innerHTML = JSON.stringify(html[16], null, 2);
+					
+	}
+)()
+
+
+let FranceS = document.querySelector(".FranceS");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			FranceS.innerHTML = JSON.stringify(html[17], null, 2);
+					
+	}
+)()
+
+
+let FranceM = document.querySelector(".FranceM");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			FranceM.innerHTML = JSON.stringify(html[18], null, 2);
+					
+	}
+)()	
+
+let FranceL = document.querySelector(".FranceL");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			FranceL.innerHTML = JSON.stringify(html[19], null, 2);
+					
+	}
+)()	
+
+let FranceXL = document.querySelector(".FranceXL");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			FranceXL.innerHTML = JSON.stringify(html[20], null, 2);
+					
+	}
+)()	
+
+</script>
+
+
+
+
+
+
+
+<script>
+let GermanyXS = document.querySelector(".GermanyXS");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			GermanyXS.innerHTML = JSON.stringify(html[21], null, 2);
+					
+	}
+)()
+
+
+let GermanyS = document.querySelector(".GermanyS");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			GermanyS.innerHTML = JSON.stringify(html[22], null, 2);
+					
+	}
+)()
+
+
+let GermanyM = document.querySelector(".GermanyM");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			GermanyM.innerHTML = JSON.stringify(html[23], null, 2);
+					
+	}
+)()	
+
+let GermanyL = document.querySelector(".GermanyL");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			GermanyL.innerHTML = JSON.stringify(html[24], null, 2);
+					
+	}
+)()	
+
+let GermanyXL = document.querySelector(".GermanyXL");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			GermanyXL.innerHTML = JSON.stringify(html[25], null, 2);
+					
+	}
+)()	
+
+</script>
+
+
+
+<script>
+let KuwaitXS = document.querySelector(".KuwaitXS");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			KuwaitXS.innerHTML = JSON.stringify(html[26], null, 2);
+					
+	}
+)()
+
+
+let KuwaitS = document.querySelector(".KuwaitS");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			KuwaitS.innerHTML = JSON.stringify(html[27], null, 2);
+					
+	}
+)()
+
+
+let KuwaitM = document.querySelector(".KuwaitM");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			KuwaitM.innerHTML = JSON.stringify(html[28], null, 2);
+					
+	}
+)()	
+
+let KuwaitL = document.querySelector(".KuwaitL");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			KuwaitL.innerHTML = JSON.stringify(html[29], null, 2);
+					
+	}
+)()	
+
+let KuwaitXL = document.querySelector(".KuwaitXL");
+(
+    async()=>{
+        let workbook = XLSX.read(await (await fetch("stock_data.xlsx")).arrayBuffer());
+		console.log(workbook);
+		let worksheet = workbook.Sheets[workbook.SheetNames[3]];
+    	    let html = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+			KuwaitXL.innerHTML = JSON.stringify(html[30], null, 2);
+					
+	}
+)()	
+
+</script>
