@@ -72,7 +72,7 @@
                 <div class="dropdown">
                   <div id="selected" class="selected">Select Your Prefered Delivery Option</div>
 				  <div id="content" class="content">
-                  <select class="normalinput" name="giftname" id="giftname" onchange="populate('giftname')">
+                  <select class="normalinput" id="giftname" onchange="populate('giftname')">
                     <option data-price="0" class="item-checkbox" name="To be collected From Store" isSelected="false" onclick="selectMe(this)" value="G0001" href="#">To be collected Free of cost</option>
                     <option data-price="10" class="item-checkbox" name="Delivery within Beirut" isSelected="false" onclick="selectMe(this)" value="G0002" href="#">Delivery within Beirut - charges 10 usd</option>
 					<option data-price="20" class="item-checkbox" name="Delivery Outside Beirut" isSelected="false" onclick="selectMe(this)" value="G0002" href="#">Delivery Outside Beirut - charges 20 usd</option>
@@ -127,7 +127,7 @@
                     <div class="flex">
                         <div class="input-box">
                             <span>Mobile #:</span>
-                            <input type="text" placeholder="71651922" required="True">
+                            <input type="text" name="mobile" placeholder="71651922" required="True">
                         </div>
                     </div>
                 </div>
