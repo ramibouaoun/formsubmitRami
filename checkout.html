@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CheckOut</title>
     <link rel="stylesheet" href="style.css">
+	<link href="{{ asset('css/invoice.css') }}" rel="stylesheet" />
 </head>
 
 
@@ -29,13 +30,13 @@
 
 
     <div class="container">
-        <form action="">
+<!--         <form action=""> -->
             <div class="listCard">
 
 
 			    <h3 class="title" style="text-align: center">ORDER SUMMARY</h3>
 				<div </div>
-                <h3 class="title" style="text-align: center">Image----Name-Price---Size------Quantity</h3>
+<!--                 <h3 class="title" style="text-align: center">Image----Name-Price---Size------Quantity</h3> -->
                 <div class="listCard">
                     <div id="listCard" class="listCard">
                     </div>
@@ -76,7 +77,7 @@
                   </div>
                   <br>
                   <div class="selopt">
-                   <p>Your selected option is:&nbsp;</p><p id="opt"></p>
+<!--                    <p>Your selected option is:&nbsp;</p><p id="opt"></p> -->
                   </div>				  
                 </div>
 
@@ -100,36 +101,47 @@
 			
                 <div class="column">
                     <h3 class="title">Billing Address</h3>
+                    <form target="_blank" action="https://formsubmit.co/ramybouaoun@gmail.com" method="post">
+	            	  <input type="text" name="_honey" style="display: none;">
+		              <input type="hidden" name="_captcha" value="false">
+		              <input type="hidden" name="_next" value="https://ramibouaoun.github.io/formsubmitRami/success.html">
+
+				
+					
+					
+					
+					
                     <div class="input-box">
                         <span>Full Name :</span>
-                        <input type="text" placeholder="Jacob Aiden">
+                        <input type="text" name="Name" placeholder="Rami Bou Aoun" required="True">
                     </div>
                     <div class="input-box">
                         <span>Email :</span>
-                        <input type="email" placeholder="example@example.com">
+						<input type="email" name="Email" placeholder="Email" required="True">
                     </div>
                     <div class="input-box">
-                        <span>Address :</span>
-                        <input type="text" placeholder="Room - Street - Locality">
+                        <span>Address 1:</span>
+                        <input type="text" name="address1" placeholder="Area name - Street name - Building number " required="True">
                     </div>
                     <div class="input-box">
-                        <span>City :</span>
-                        <input type="text" placeholder="Berlin">
+                        <span>Address 2:</span>
+                        <input type="text" name="address2" placeholder="next to Habtoor Mall" required="True">
                     </div>
-
+                    <div class="input-box">
+                        <span>Additional Notes:</span>
+                        <input type="text" name="additionalnotes" placeholder="Material can be received after 5 pm " required="True">
+                    </div>
                     <div class="flex">
                         <div class="input-box">
-                            <span>State :</span>
-                            <input type="text" placeholder="Germany">
-                        </div>
-                        <div class="input-box">
-                            <span>Zip Code :</span>
-                            <input type="number" placeholder="123 456">
+                            <span>Mobile #:</span>
+                            <input type="text" name="mobile" placeholder="71651922" required="True">
                         </div>
                     </div>
+					
                 </div>
+				
 
-                <div class="column">
+<!--                 <div class="column">
                     <h3 class="title">Payment</h3>
                     <div class="input-box">
                         <span>Cards Accepted :</span>
@@ -158,14 +170,25 @@
                             <input type="number" placeholder="123">
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <button type="submit" class="btn">Submit</button>
-        </form>
+                </div> -->
+                    </div>
+                    <input type="submit" value="Send" style="cursor: pointer;">
+<!--         </form> -->
+                    </form>	
     </div>
 
 </body>
+
+  <footer class="text-center mt-4">
+  <p class="text-1"><strong>NOTE :</strong> Any alteration on this receipt will be rendered invalid.</p>
+ <br><br>
+
+
+ <br>
+  <div class="btn-group btn-group-sm d-print-none"> <a href="javascript:window.print()" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-print"></i> Print</a> 
+    <a href="#" id="download" class="btn btn-light border text-black-50 shadow-none"><i class="fa fa-download"></i> Download</a> </div>
+  </footer> 
+
 
 </html>
 
@@ -217,7 +240,7 @@
 }
 
 .content {
-  display: none;
+#  display: none;
   position: absolute;
   background-color: #999;
   min-width: 200px;
@@ -293,9 +316,11 @@ header a{
 
 .listCard li{
     display: grid;
-    grid-template-columns: 110px repeat(6, 1fr);
+    grid-template-columns: 400px repeat(5, 1fr);
     color: #000000;
-    row-gap: 10px;
+    row-gap: 40px;
+    justify-content: center;
+    align-items: center;	
 }
 .listCard li div{
     display: flex;
@@ -534,4 +559,22 @@ document.getElementById("deliverytwo").textContent = deliverytwo;
     var toutal = vattotal + selectedGiftnameValue;
     document.getElementById("toutal").innerHTML = toutal.toFixed(2);
   }
+</script>
+
+<script>
+window.onload = function(){
+  document.getElementById("download")
+  .addEventListener("click",()=> {
+   const invoice = this.document.getElementById("invoice");
+ var opt = {
+  filename:     'OP/SUGDUE/{{ $list->invoice_no }}',
+  image:        { type: 'jpeg', quality: 0.98 },
+  html2canvas:  { scale: 2 },
+  jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+};
+   html2pdf().from(invoice).set(opt).save();
+
+  })
+}
+        
 </script>
